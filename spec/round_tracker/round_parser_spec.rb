@@ -37,6 +37,18 @@ module RoundTracker
       end
     end
 
+    describe '#all_rounds' do
+      it 'returns all rounds' do
+        allow(RoundParser).to receive(:previous_rounds).and_return(Array.new(3))
+        allow(RoundParser).to receive(:latest_round).and_return(nil)
+          
+        all_rounds = RoundParser.all_rounds
+
+        expect(all_rounds).to be_a(Array)
+        expect(all_rounds.size).to eq(4)
+      end
+    end
+
     describe '#parse_doc' do
       it "returns a round object" do
         doc = Nokogiri::HTML(latest_round_file)

@@ -17,6 +17,10 @@ module RoundTracker
         end
       end
 
+      def all_rounds
+        previous_rounds << latest_round
+      end
+
       def parse_doc(doc)
         post_date       = doc.css('time').first.children.first.text
         lowest_score    = doc.css('.table td').last.children.first.text
