@@ -1,0 +1,10 @@
+#!/usr/bin/env rerun ruby
+
+require "bundler/setup"
+require "round_tracker"
+require "sinatra"
+
+get '/' do
+  @all_rounds = RoundTracker::RoundParser.all_rounds
+  erb :index
+end
