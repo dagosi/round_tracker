@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Round Tracker</title>
+  </head>
+
+  <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
+  
+  <body>
+    <div class="container">
+      <table>
+        <thead>
+          <th>Round #</th>
+          <th>Date Posted</th>
+          <th>Number Invitations Sent</th>
+          <th>Lowest Score</th>        
+        </thead>
+
+        <tbody>
+          <% @all_rounds.each_with_index do |round, index| %>
+            <tr>
+              <td><%= index + 1 %></td>
+              <td><%= round.post_date.strftime('%b %d, %Y') %></td>
+              <td><%= round.num_invitations %></td>
+              <td><%= round.lowest_score %></td>
+            </tr>
+          <% end %>
+        </tbody>        
+      </table>
+    </div>
+  </body>
+</html>
