@@ -3,13 +3,24 @@ require "open-uri"
 
 module RoundTracker
   class RoundParser
-    LATEST_ROUND_URL = "http://www.cic.gc.ca/english/express-entry/rounds.asp"
-
     class << self
-      def parse_latest
-        doc = Nokogiri::HTML(open(LATEST_ROUND_URL))
+      def latest_round
+        doc = Nokogiri::HTML(open("http://www.cic.gc.ca/english/express-entry/rounds.asp"))
+        parse_doc(doc)
+      end
 
-        post_date       = doc.css('section time').first.children.first.text
+      def previous_rounds
+        doc = Nokogiri::HTML(open("http://www.cic.gc.ca/english/express-entry/past-rounds.asp"))
+
+        [].tap do |rounds|
+          doc.css('section details').each do |detail|
+            rounds << parse_doc(detail)
+          end
+        end
+      end
+
+      def parse_doc(doc)
+        post_date       = doc.css('time').first.children.first.text
         lowest_score    = doc.css('.table td').last.children.first.text
         num_invitations = doc.css('.table td').first.children.first.text
 
