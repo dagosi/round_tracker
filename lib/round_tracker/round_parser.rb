@@ -12,10 +12,8 @@ module RoundTracker
       def previous_rounds
         doc = Nokogiri::HTML(open("http://www.cic.gc.ca/english/express-entry/past-rounds.asp"))
 
-        [].tap do |rounds|
-          doc.css('section details').each do |detail|
-            rounds << parse_doc(detail)
-          end
+        doc.css('section details').each_with_object([]) do |detail, rounds|
+          rounds << parse_doc(detail)
         end
       end
 
