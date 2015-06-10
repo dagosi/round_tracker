@@ -1,4 +1,4 @@
-module RoundTracker
+module RoundScrapper
   class Round
     attr_accessor :post_date, :num_invitations, :lowest_score
 

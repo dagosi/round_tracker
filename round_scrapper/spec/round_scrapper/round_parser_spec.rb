@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module RoundTracker
+module RoundScrapper
   describe RoundParser do
     let(:latest_round_attributes ) do
       Hash.new(

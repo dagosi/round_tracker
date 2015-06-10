@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module RoundTracker
+module RoundScrapper
   describe Round do
     describe "#create" do
       let!(:round) { Round.new(Date.parse("Jun 7, 2015"), 300, 765) }

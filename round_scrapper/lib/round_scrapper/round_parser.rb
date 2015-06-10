@@ -1,7 +1,7 @@
 require "nokogiri"
 require "open-uri"
 
-module RoundTracker
+module RoundScrapper
   class RoundParser
     class << self
       def latest_round
