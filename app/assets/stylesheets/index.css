@@ -1,5 +1,4 @@
 html, body {
-  height: 100%;
   background-image: url('../images/background.jpg');
 }
 
@@ -9,8 +8,7 @@ html {
 }
 
 body {
-  display: table-cell;
-  vertical-align: middle;
+  margin-top: 40px;
 }
 
 .container {
@@ -21,6 +19,29 @@ body {
   height: auto;
 }
 
+table, th, td {
+  border-collapse: collapse;
+}
+
+th {
+  font-family: Hoefler Text, serif;
+  color: white;
+}
+
+th, tr {
+  background: #6FBC70;
+  letter-spacing: 0.7px;
+}
+
 td {
   text-align: center;
+  font-family: Helvetica, sans-serif;
+}
+
+tr:nth-child(even) {
+  background: #D5F3D5
+}
+
+tr:nth-child(odd) {
+  background: #FFF
 }
