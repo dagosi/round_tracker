@@ -13,12 +13,12 @@ module RoundScrapper
       }
     end
 
-    def self.send_notification(round)
+    def self.send_notification(content)
       Mail.new do
         from 'round.tracker@heroku.com'
         to 'danielgomezsierra@gmail.com'
         subject 'There was a new draw!!!'
-        body round.to_s
+        body content
       end.deliver
     end
   end

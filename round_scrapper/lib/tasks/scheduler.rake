@@ -5,6 +5,8 @@ namespace :round_scrapper do
     
     if latest_round.post_date >= DateTime.now - 2
       RoundScrapper::Mailer.send_notification(latest_round.to_s)
+    else
+      RoundScrapper::Mailer.send_notification("There were no new draws")
     end
   end
 end
