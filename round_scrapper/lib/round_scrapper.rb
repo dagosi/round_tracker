@@ -21,7 +21,7 @@ module RoundScrapper
     end
 
     mail = Mail.new do
-      from 'theapp@something.com'
+      from 'danielgomezsierra@gmail.com'
       to 'danielgomezsierra@gmail.com'
       subject 'Test!'
       body 'This is the content'
