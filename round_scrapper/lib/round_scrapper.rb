@@ -9,7 +9,7 @@ module RoundScrapper
     options = { 
       :address              => "smtp.gmail.com",
       :port                 => 587,
-      :domain               => 'heroku.com',
+      :domain               => 'herokuapp.com',
       :user_name            => ENV['MAIL_USER_NAME'],
       :password             => ENV['MAIL_PASSWORD'],
       :authentication       => 'plain',
