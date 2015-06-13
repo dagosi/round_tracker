@@ -7,5 +7,13 @@ module RoundScrapper
       @num_invitations = num_invitations
       @lowest_score = lowest_score.to_i
     end
+
+    def to_s
+      <<-round
+        Date: #{@post_date}
+        Invitations Sent: #{@num_invitations}
+        Lowest Score: #{@lowest_score}
+      round
+    end
   end
 end

@@ -4,7 +4,7 @@ namespace :round_scrapper do
     latest_round = RoundScrapper::RoundParser.latest_round
     
     if latest_round.post_date >= DateTime.now - 2
-      RoundScrapper::Mailer.send_notification
+      RoundScrapper::Mailer.send_notification(latest_round.to_s)
     end
   end
 end
